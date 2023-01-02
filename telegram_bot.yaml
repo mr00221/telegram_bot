@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: telegram-deployment
+  labels:
+    app: telegram
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: telegram
+  template:
+    metadata:
+      labels:
+        app: telegram
+    spec:
+      containers:
+        - name: telegram
+          image: zeenpc/telegrambot:v1

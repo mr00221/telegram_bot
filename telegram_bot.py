@@ -49,7 +49,7 @@ def filters(update, context):
     r = requests.get(url=server_addr + ':8000/app1/users/' + str(update.effective_chat.id))
 
     if r.status_code == 200:
-        context.bot.send_message(chat_id=update.effective_chat.id, text="mojIPnaslov/filters/"+ str(update.effective_chat.id) + "/")
+        context.bot.send_message(chat_id=update.effective_chat.id, text="http://20.246.147.191/filterpage/" + str(update.effective_chat.id) + "/")
         return None
     if r.status_code == 404:
         context.bot.send_message(chat_id=update.effective_chat.id, text="Uporabnik ni registriran")
